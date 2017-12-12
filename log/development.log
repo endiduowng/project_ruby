@@ -1,0 +1,570 @@
+Started GET "/" for 127.0.0.1 at 2017-12-12 18:22:56 +0700
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /home/duong/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/railties-5.0.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/duong/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/railties-5.0.6/lib/rails/templates/rails/welcome/index.html.erb (16.0ms)
+Completed 200 OK in 84ms (Views: 36.1ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (102.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (94.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateFriendlyIdSlugs (20171212113512)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+DEPRECATION WARNING: Directly inheriting from ActiveRecord::Migration is deprecated. Please specify the Rails release the migration was written for:
+
+  class CreateFriendlyIdSlugs < ActiveRecord::Migration[4.2] (called from require at /home/duong/CodeRuby/project_ruby/bin/rails:9)
+  [1m[35m (6.5ms)[0m  [1m[35mCREATE TABLE "friendly_id_slugs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "slug" varchar NOT NULL, "sluggable_id" integer NOT NULL, "sluggable_type" varchar(50), "scope" varchar, "created_at" datetime)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE  INDEX "index_friendly_id_slugs_on_sluggable_id" ON "friendly_id_slugs" ("sluggable_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_friendly_id_slugs_on_sluggable_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_friendly_id_slugs_on_sluggable_id' AND type='index'
+[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE  INDEX "index_friendly_id_slugs_on_slug_and_sluggable_type" ON "friendly_id_slugs" ("slug", "sluggable_type")[0m
+  [1m[35m (0.3ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_friendly_id_slugs_on_slug_and_sluggable_type' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_friendly_id_slugs_on_slug_and_sluggable_type' AND type='index'
+[0m
+  [1m[35m (0.4ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_friendly_id_slugs_on_sluggable_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_friendly_id_slugs_on_sluggable_id' AND type='index'
+[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope" ON "friendly_id_slugs" ("slug", "sluggable_type", "scope")[0m
+  [1m[35m (0.3ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope' AND type='index'
+[0m
+  [1m[35m (0.3ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_friendly_id_slugs_on_slug_and_sluggable_type' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_friendly_id_slugs_on_slug_and_sluggable_type' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_friendly_id_slugs_on_sluggable_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_friendly_id_slugs_on_sluggable_id' AND type='index'
+[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE  INDEX "index_friendly_id_slugs_on_sluggable_type" ON "friendly_id_slugs" ("sluggable_type")[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171212113512"]]
+  [1m[35m (111.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreatePosts (20171212113712)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "description" text, "slug" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_posts_on_slug" ON "posts" ("slug")[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171212113712"]]
+  [1m[35m (185.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-12-12 11:37:39.419995"], ["updated_at", "2017-12-12 11:37:39.419995"]]
+  [1m[35m (75.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_friendly_id_slugs_on_sluggable_type' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_friendly_id_slugs_on_sluggable_type' AND type='index'
+[0m
+  [1m[35m (0.3ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope' AND type='index'
+[0m
+  [1m[35m (0.3ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_friendly_id_slugs_on_slug_and_sluggable_type' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_friendly_id_slugs_on_slug_and_sluggable_type' AND type='index'
+[0m
+  [1m[35m (0.3ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_friendly_id_slugs_on_sluggable_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_friendly_id_slugs_on_sluggable_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_posts_on_slug' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_posts_on_slug' AND type='index'
+[0m
+Started GET "/" for 127.0.0.1 at 2017-12-12 18:46:31 +0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#index as HTML
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant Post::FriendlyId):
+  
+app/models/post.rb:2:in `<class:Post>'
+app/models/post.rb:1:in `<top (required)>'
+app/controllers/posts_controller.rb:7:in `index'
+  Rendering /home/duong/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/duong/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/duong/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (12.2ms)
+  Rendering /home/duong/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/duong/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.8ms)
+  Rendering /home/duong/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/duong/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /home/duong/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (107.9ms)
+Started GET "/" for 127.0.0.1 at 2017-12-12 18:49:48 +0700
+Processing by PostsController#index as HTML
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant Post::FriendlyId):
+  
+app/models/post.rb:3:in `<class:Post>'
+app/models/post.rb:1:in `<top (required)>'
+app/controllers/posts_controller.rb:7:in `index'
+  Rendering /home/duong/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/duong/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/duong/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (13.0ms)
+  Rendering /home/duong/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/duong/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.5ms)
+  Rendering /home/duong/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/duong/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /home/duong/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (60.9ms)
+Started GET "/" for 127.0.0.1 at 2017-12-12 18:54:30 +0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (18.6ms)
+Completed 500 Internal Server Error in 5321ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (File to import not found or unreadable: bootstap.
+Load paths:
+  /home/duong/CodeRuby/project_ruby/app/assets/config
+  /home/duong/CodeRuby/project_ruby/app/assets/images
+  /home/duong/CodeRuby/project_ruby/app/assets/javascripts
+  /home/duong/CodeRuby/project_ruby/app/assets/stylesheets
+  /home/duong/CodeRuby/project_ruby/vendor/assets/javascripts
+  /home/duong/CodeRuby/project_ruby/vendor/assets/stylesheets
+  /home/duong/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /home/duong/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/duong/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actioncable-5.0.6/lib/assets/compiled
+  /home/duong/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /home/duong/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/popper_js-1.12.5/assets/javascripts
+  /home/duong/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/bootstrap-4.0.0.beta2.1/assets/stylesheets
+  /home/duong/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/bootstrap-4.0.0.beta2.1/assets/javascripts
+  /home/duong/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/bootstrap-4.0.0.beta2.1/assets/stylesheets):
+    4:     <title>ASBlogs</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   </head>
+   10: 
+  
+app/assets/stylesheets/custom.scss:1
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__2405959975066330944_47360000139460'
+  Rendering /home/duong/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/duong/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/duong/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (26.1ms)
+  Rendering /home/duong/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/duong/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.2ms)
+  Rendering /home/duong/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/duong/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /home/duong/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (80.4ms)
+Started GET "/" for 127.0.0.1 at 2017-12-12 18:55:22 +0700
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 3655ms (Views: 3652.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2017-12-12 18:55:28 +0700
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (99.0ms)
+  Rendered posts/new.html.erb within layouts/application (101.7ms)
+Completed 200 OK in 221ms (Views: 197.7ms | ActiveRecord: 4.2ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2017-12-12 18:55:46 +0700
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ntn+0I35A8wpzdf8Rst1bVvV1yqnWgA/rss2CURnvneH4AdN/YGs1/wvaS3tYuruUNSoB27DzcVC2p4bpLZKsQ==", "post"=>{"title"=>"AS", "body"=>"pro as team", "description"=>"pro as team", "slug"=>""}, "commit"=>"Create Post"}
+  [1m[35m (0.7ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE ("posts"."id" IS NOT NULL) AND "posts"."slug" = ? LIMIT ?[0m  [["slug", "as"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("title", "body", "description", "slug", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "AS"], ["body", "pro as team"], ["description", "pro as team"], ["slug", "as"], ["created_at", "2017-12-12 11:55:47.067924"], ["updated_at", "2017-12-12 11:55:47.067924"]]
+  [1m[35m (76.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/as
+Completed 302 Found in 404ms (ActiveRecord: 78.1ms)
+
+
+Started GET "/posts/as" for 127.0.0.1 at 2017-12-12 18:55:47 +0700
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"as"}
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."slug" = ? ORDER BY "posts"."id" ASC LIMIT ?[0m  [["slug", "as"], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 113ms (Views: 102.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/posts/as/edit" for 127.0.0.1 at 2017-12-12 18:55:49 +0700
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"as"}
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."slug" = ? ORDER BY "posts"."id" ASC LIMIT ?[0m  [["slug", "as"], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/_form.html.erb (10.3ms)
+  Rendered posts/edit.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 134ms (Views: 127.3ms | ActiveRecord: 1.1ms)
+
+
+Started PATCH "/posts/as" for 127.0.0.1 at 2017-12-12 18:55:57 +0700
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mIIqYk9JhvsMKjlV3nd6ein59/FdpxFIx6jWcHmICuVbPbysUUo/aOIItGZzkh2OS+ZeP7dRhq4MnYcOk3rz4A==", "post"=>{"title"=>"AS", "body"=>"pro as team wqeqwe", "description"=>"pro as team", "slug"=>"as"}, "commit"=>"Update Post", "id"=>"as"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."slug" = ? ORDER BY "posts"."id" ASC LIMIT ?[0m  [["slug", "as"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[33mUPDATE "posts" SET "body" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["body", "pro as team wqeqwe"], ["updated_at", "2017-12-12 11:55:57.594563"], ["id", 1]]
+  [1m[35m (76.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/as
+Completed 302 Found in 94ms (ActiveRecord: 78.9ms)
+
+
+Started GET "/posts/as" for 127.0.0.1 at 2017-12-12 18:55:57 +0700
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"as"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."slug" = ? ORDER BY "posts"."id" ASC LIMIT ?[0m  [["slug", "as"], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 112ms (Views: 107.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-12-12 18:56:00 +0700
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (1.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 107ms (Views: 102.5ms | ActiveRecord: 1.9ms)
+
+
+Started DELETE "/posts/as" for 127.0.0.1 at 2017-12-12 18:56:03 +0700
+Processing by PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"uchqDVBmd7qUk2NwaxMySc29OqAEowcDvEms2L6LQOS1wL8ofTYQG3Mpxf8tG++MR6xgINeE0xfZcNURyxoaew==", "id"=>"as"}
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."slug" = ? ORDER BY "posts"."id" ASC LIMIT ?[0m  [["slug", "as"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.2ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 1]]
+  [1m[35m (97.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 112ms (ActiveRecord: 100.5ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-12-12 18:56:03 +0700
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 99ms (Views: 94.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-12-12 18:56:31 +0700
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 125ms (Views: 121.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2017-12-12 18:56:34 +0700
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (7.4ms)
+  Rendered posts/new.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 103ms (Views: 100.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2017-12-12 18:56:50 +0700
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6K42irVzsNy6o4EXY+2BkYtnbsvGClUv4BofBOuq2Tjxl88XxQsfx29BP8bIRB4SgGYR5g+TmNUMC7cWC3st/g==", "post"=>{"title"=>"aa", "body"=>"dasd", "description"=>"asdaswqe", "slug"=>"qq"}, "commit"=>"Create Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE ("posts"."id" IS NOT NULL) AND "posts"."slug" = ? LIMIT ?[0m  [["slug", "aa"], ["LIMIT", 1]]
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "posts" ("title", "body", "description", "slug", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "aa"], ["body", "dasd"], ["description", "asdaswqe"], ["slug", "aa"], ["created_at", "2017-12-12 11:56:50.640744"], ["updated_at", "2017-12-12 11:56:50.640744"]]
+  [1m[35m (235.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/aa
+Completed 302 Found in 251ms (ActiveRecord: 237.9ms)
+
+
+Started GET "/posts/aa" for 127.0.0.1 at 2017-12-12 18:56:50 +0700
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"aa"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."slug" = ? ORDER BY "posts"."id" ASC LIMIT ?[0m  [["slug", "aa"], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 129ms (Views: 124.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/aa/edit" for 127.0.0.1 at 2017-12-12 18:56:57 +0700
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"aa"}
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."slug" = ? ORDER BY "posts"."id" ASC LIMIT ?[0m  [["slug", "aa"], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/_form.html.erb (7.3ms)
+  Rendered posts/edit.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 122ms (Views: 116.9ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/posts/aa" for 127.0.0.1 at 2017-12-12 18:57:00 +0700
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PD6FKrPWKUQ3sIhbrmUHYOosEHFSgJkASqSvH4t6rL7jv9V/Qu8eKKyk6rgp/hxWcK296lmZL5je37mjCxFSVw==", "post"=>{"title"=>"aa", "body"=>"dasd", "description"=>"asdaswqeewqewq", "slug"=>"aa"}, "commit"=>"Update Post", "id"=>"aa"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."slug" = ? ORDER BY "posts"."id" ASC LIMIT ?[0m  [["slug", "aa"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[33mUPDATE "posts" SET "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["description", "asdaswqeewqewq"], ["updated_at", "2017-12-12 11:57:00.579474"], ["id", 2]]
+  [1m[35m (105.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/aa
+Completed 302 Found in 119ms (ActiveRecord: 107.8ms)
+
+
+Started GET "/posts/aa" for 127.0.0.1 at 2017-12-12 18:57:00 +0700
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"aa"}
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."slug" = ? ORDER BY "posts"."id" ASC LIMIT ?[0m  [["slug", "aa"], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 111ms (Views: 104.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts/aa" for 127.0.0.1 at 2017-12-12 18:58:22 +0700
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"aa"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."slug" = ? ORDER BY "posts"."id" ASC LIMIT ?[0m  [["slug", "aa"], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 167ms (Views: 113.5ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/posts/aa/edit" for 127.0.0.1 at 2017-12-12 18:58:26 +0700
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"aa"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."slug" = ? ORDER BY "posts"."id" ASC LIMIT ?[0m  [["slug", "aa"], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/_form.html.erb (8.0ms)
+  Rendered posts/edit.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 103ms (Views: 97.4ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/posts/aa" for 127.0.0.1 at 2017-12-12 18:58:30 +0700
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"laGhTt2DF+IuH+jcjCD7NixR3Hm/ZCWsYAS4Tl9D6n5KIPEbLLogjrULij8Lu+AAttBx4rR9kzT0f67y3ygUlw==", "post"=>{"title"=>"aa", "body"=>"dasddsada ", "description"=>"asdaswqeewqewq"}, "commit"=>"Update Post", "id"=>"aa"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."slug" = ? ORDER BY "posts"."id" ASC LIMIT ?[0m  [["slug", "aa"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.9ms)[0m  [1m[33mUPDATE "posts" SET "body" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["body", "dasddsada "], ["updated_at", "2017-12-12 11:58:30.263725"], ["id", 2]]
+  [1m[35m (122.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/aa
+Completed 302 Found in 139ms (ActiveRecord: 124.6ms)
+
+
+Started GET "/posts/aa" for 127.0.0.1 at 2017-12-12 18:58:30 +0700
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"aa"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."slug" = ? ORDER BY "posts"."id" ASC LIMIT ?[0m  [["slug", "aa"], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 113ms (Views: 107.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-12-12 18:58:32 +0700
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 98ms (Views: 94.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2017-12-12 18:58:34 +0700
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (5.9ms)
+  Rendered posts/new.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 104ms (Views: 100.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2017-12-12 18:58:39 +0700
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"d+wsPk0icy2taFJ7wmJLwQX1SWR5WWR+v3yL0JxJOXlu1dWjPVrcNniK7Kppy9RCDvQ2SbDAqYRTbSPCfJjNvw==", "post"=>{"title"=>"bb", "body"=>"dsadas", "description"=>"asdasq"}, "commit"=>"Create Post"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE ("posts"."id" IS NOT NULL) AND "posts"."slug" = ? LIMIT ?[0m  [["slug", "bb"], ["LIMIT", 1]]
+  [1m[35mSQL (2.5ms)[0m  [1m[32mINSERT INTO "posts" ("title", "body", "description", "slug", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "bb"], ["body", "dsadas"], ["description", "asdasq"], ["slug", "bb"], ["created_at", "2017-12-12 11:58:39.048962"], ["updated_at", "2017-12-12 11:58:39.048962"]]
+  [1m[35m (235.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/bb
+Completed 302 Found in 255ms (ActiveRecord: 238.5ms)
+
+
+Started GET "/posts/bb" for 127.0.0.1 at 2017-12-12 18:58:39 +0700
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"bb"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."slug" = ? ORDER BY "posts"."id" ASC LIMIT ?[0m  [["slug", "bb"], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 100ms (Views: 93.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/bb/edit" for 127.0.0.1 at 2017-12-12 18:58:42 +0700
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"bb"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."slug" = ? ORDER BY "posts"."id" ASC LIMIT ?[0m  [["slug", "bb"], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/_form.html.erb (7.6ms)
+  Rendered posts/edit.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 106ms (Views: 100.1ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/posts/bb" for 127.0.0.1 at 2017-12-12 18:58:44 +0700
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/mAD5c1E73AiuKY3aNmjqIY6d9HhnZKW584RudCbbng7hH1wjO8xJijbYpKfBMf/9IHibNTADeGflqZxlXZDJg==", "post"=>{"title"=>"bb", "body"=>"dsadas", "description"=>"asdasq"}, "commit"=>"Update Post", "id"=>"bb"}
+  [1m[36mPost Load (1.7ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."slug" = ? ORDER BY "posts"."id" ASC LIMIT ?[0m  [["slug", "bb"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/bb
+Completed 302 Found in 11ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/posts/bb" for 127.0.0.1 at 2017-12-12 18:58:44 +0700
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"bb"}
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."slug" = ? ORDER BY "posts"."id" ASC LIMIT ?[0m  [["slug", "bb"], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 119ms (Views: 111.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-12-12 18:58:45 +0700
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 95ms (Views: 91.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/aa" for 127.0.0.1 at 2017-12-12 18:58:48 +0700
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"aa"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."slug" = ? ORDER BY "posts"."id" ASC LIMIT ?[0m  [["slug", "aa"], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 102ms (Views: 98.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/aa" for 127.0.0.1 at 2017-12-12 19:00:50 +0700
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"aa"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."slug" = ? ORDER BY "posts"."id" ASC LIMIT ?[0m  [["slug", "aa"], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 104ms (Views: 99.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-12-12 19:00:51 +0700
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 129ms (Views: 126.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-12-12 19:01:36 +0700
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 109ms (Views: 105.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-12-12 19:01:38 +0700
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 112ms (Views: 109.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2017-12-12 19:01:39 +0700
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (5.5ms)
+  Rendered posts/new.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 101ms (Views: 98.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2017-12-12 19:02:56 +0700
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (6.1ms)
+  Rendered posts/new.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 108ms (Views: 105.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-12-12 19:02:58 +0700
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 97ms (Views: 94.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/aa" for 127.0.0.1 at 2017-12-12 19:02:59 +0700
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"aa"}
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."slug" = ? ORDER BY "posts"."id" ASC LIMIT ?[0m  [["slug", "aa"], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 118ms (Views: 111.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/posts/aa/edit" for 127.0.0.1 at 2017-12-12 19:03:01 +0700
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"aa"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."slug" = ? ORDER BY "posts"."id" ASC LIMIT ?[0m  [["slug", "aa"], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/_form.html.erb (6.1ms)
+  Rendered posts/edit.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 118ms (Views: 113.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-12-12 19:03:04 +0700
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 98ms (Views: 94.4ms | ActiveRecord: 0.4ms)
+
+
